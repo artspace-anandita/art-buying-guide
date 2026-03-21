@@ -29,6 +29,7 @@
             line-height: 1.7;
             margin: 0;
             scroll-behavior: smooth;
+            font-size: clamp(14px, 1vw, 16px);
         }
 
         h1,
@@ -47,7 +48,7 @@
 
         /* Header */
         header {
-            padding: 80px 0 60px;
+            padding: 60px 0 40px;
             text-align: center;
             background: linear-gradient(to bottom, #f9f9f9, #fff);
         }
@@ -94,19 +95,18 @@
             text-decoration: none;
             color: var(--primary);
             font-size: 0.9rem;
-            transition: 0.3s;
+            transition: all 0.3s ease;
         }
 
         .index-grid a:hover {
             color: var(--accent);
-            padding-left: 5px;
+            transform: translateX(5px);
         }
 
         /* Sections */
         section {
-            padding: 80px 0;
+            padding: 70px 0;
             border-bottom: 1px solid var(--border);
-           
         }
 
         .section-tag {
@@ -197,6 +197,12 @@
 
         .compare-col:first-child {
             border-right: 1px solid var(--border);
+        }
+
+        @media (max-width: 600px) {
+            .compare-col:first-child {
+                border-right: none;
+            }
         }
 
         .compare-col h3 {
@@ -291,7 +297,7 @@
             border: 1px solid var(--border);
             border-radius: 6px;
             overflow: hidden;
-            transition: box-shadow 0.3s, transform 0.3s;
+            transition: all 0.3s ease;
         }
 
         .framing-card:hover {
@@ -458,7 +464,7 @@
 
 
         .footer-legal {
-            color: rgba(255,255,255,0.5);
+            color: rgba(255, 255, 255, 0.5);
         }
 
         @media (max-width: 600px) {
@@ -534,6 +540,12 @@
             min-width: 600px;
         }
 
+        @media (max-width: 600px) {
+            table {
+                font-size: 0.85rem;
+            }
+        }
+
         th {
             text-align: left;
             padding: 15px;
@@ -568,6 +580,11 @@
             align-items: center;
             color: var(--primary);
             gap: 16px;
+        }
+
+        details.faq-item summary:focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
         }
 
         details.faq-item summary::-webkit-details-marker {
@@ -613,6 +630,14 @@
             border-bottom: 1px solid currentColor;
         }
 
+        .card-dark {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 8px;
+            padding: 32px;
+            margin-bottom: 36px;
+        }
+
         /* WhatsApp disabled state
            ─────────────────────────────────────────────────────────────────
            TO ENABLE WHATSAPP: remove the class "whatsapp-disabled" from
@@ -629,7 +654,7 @@
         /* Footer CTA */
         .cta-footer {
             text-align: center;
-            padding: 100px 0;
+            padding: 70px 0;
             background: #111111;
             color: #fff;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -662,740 +687,793 @@
                 my work.</p>
         </div>
     </header>
-
-    <div class="container">
-        <nav id="index">
-            <div class="index-title">Information Index</div>
-            <div class="index-grid">
-                <a href="#process">01. Three Ways to Own This Artwork</a>
-                <a href="#which-option">02. Framing & Finishing</a>
-                <a href="#compare">03. Print vs Hand-Painted</a>
-                <a href="#size-guide">04. Size at a Glance</a>
-                <a href="#timeline">05. Turnaround Timeline</a>
-                <a href="#pricing">06. Sizes & Pricing</a>
-                <a href="#portfolio">07. Portfolio</a>
-                <a href="#faq">08. Frequently Asked Questions</a>
-                <a href="#order">09. Place Your Order</a>
-            </div>
-        </nav>
-
-        <!-- SECTION 01. Three Ways to Own This Artwork -->
-        <section id="process">
-            <span class="section-tag">01. Three Ways to Own This Artwork</span>
-            <h2>Detailed Process</h2>
-            <p>Whether you are looking for an exact digital replica or a one-of-a-kind textured original, we have three
-                ways to bring art into your home:</p>
-            <div class="grid-3">
-                <div class="card">
-                    <span class="card-icon">🖼️</span>
-                    <h3>Canvas Print</h3>
-                    <p>A Canvas Print is a high-quality digital reproduction of the original artwork.</p>
-                    <ul>
-                        <li>Printed on premium textured canvas</li>
-                        <li>Captures colors and details with precision</li>
-                        <li>Ideal for modern homes and gifting</li>
-                        <li>Clean, consistent finish</li>
-                    </ul>
-                    <p><strong>Best for:</strong><br>Those who want an affordable yet premium-looking artwork.</p>
-                </div>
-                <div class="card">
-                    <span class="card-icon">🎨</span>
-                    <h3>Hand Painted</h3>
-                    <p>A Hand Painted artwork is a carefully recreated version of the original piece.</p>
-                    <ul>
-                        <li>I will personally recreate the piece on canvas</li>
-                        <li>While it follows the original design, every brushstroke is unique, giving the piece a
-                            physical texture and "soul" that only a handmade painting has.</li>
-                    </ul>
-                    <p><strong>Best for:</strong><br>Art lovers who value originality and texture.</p>
-                </div>
-                <div class="card">
-                    <span class="card-icon">✨</span>
-                    <h3>Commission</h3>
-                    <p>Custom-made for you. If you love a style but want something personal, let’s create it together.
-                    </p>
-                    <ul>
-                        <li>Fully customized artwork based on your idea</li>
-                        <li>Choose size ranging from A4 to A1, theme, colors, and style</li>
-                        <li>Collaborative process (discussion + approval)</li>
-                    </ul>
-                    <p><strong>Best for:</strong><br>Those who want a deeply personal or custom-designed artwork.</p>
-                </div>
-            </div>
-            <a href="#header" class="back-to-top">↑ Return to Index</a>
-        </section>
-
-        <!-- SECTION 02. Framing & Finishing -->
-        <section id="which-option">
-            <span class="section-tag">02. Framing & Finishing</span>
-            <h2>Ready to hang or rolled?</h2>
-            <p>How your art arrives matters. We offer three finishing options to suit your home décor needs.</p>
-
-            <div class="framing-grid">
-
-                <!-- Option 1: Rolled Canvas (Preferred) -->
-                <div class="framing-card preferred">
-                    <div class="framing-image-placeholder">
-                        <!-- Replace the SVG below with <img src="your-image.jpg" alt="Rolled Canvas"> when ready -->
-                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="4" y="8" width="32" height="24" rx="2" stroke="#b08d57" stroke-width="1.5" />
-                            <path d="M12 20h16M16 15l-4 5 4 5" stroke="#b08d57" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                        Add image here
-                    </div>
-                    <div class="framing-body">
-                        <div class="framing-badge">★ Preferred</div>
-                        <h3>Rolled Canvas</h3>
-                        <ul>
-                            <li>Shipped rolled in a protective tube</li>
-                            <li>Comes with white border for framing/stretching</li>
-                            <li>Ideal for framing locally to match your interior style</li>
-                            <li>Safer delivery and cost-effective shipping</li>
-                        </ul>
-                        <div class="framing-meta"><span>No extra cost</span></div>
-                    </div>
-                </div>
-
-                <!-- Option 2: Stretched Canvas -->
-                <div class="framing-card">
-                    <div class="framing-image-placeholder">
-                        <!-- Replace the SVG below with <img src="your-image.jpg" alt="Stretched Canvas"> when ready -->
-                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="4" y="8" width="32" height="24" rx="2" stroke="#999" stroke-width="1.5" />
-                            <rect x="8" y="12" width="24" height="16" rx="1" stroke="#999" stroke-width="1" />
-                            <path d="M4 10l4 4M36 10l-4 4M4 30l4-4M36 30l-4-4" stroke="#999" stroke-width="1.2"
-                                stroke-linecap="round" />
-                        </svg>
-                        Add image here
-                    </div>
-                    <div class="framing-body">
-                        <h3>Stretched Canvas</h3>
-                        <ul>
-                            <li>Canvas stretched over a wooden frame</li>
-                            <li>Ready to hang</li>
-                            <li>Gallery-style presentation</li>
-                        </ul>
-                        <div class="framing-meta"><span>Additional cost</span></div>
-                    </div>
-                </div>
-
-                <!-- Option 3: Framed Canvas -->
-                <div class="framing-card">
-                    <div class="framing-image-placeholder">
-                        <!-- Replace the SVG below with <img src="your-image.jpg" alt="Framed Canvas"> when ready -->
-                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="2" y="2" width="36" height="36" rx="2" stroke="#999" stroke-width="1.5" />
-                            <rect x="7" y="7" width="26" height="26" rx="1" stroke="#999" stroke-width="1" />
-                            <rect x="12" y="12" width="16" height="16" rx="1" stroke="#999" stroke-width="1"
-                                stroke-dasharray="2 2" />
-                        </svg>
-                        Add image here
-                    </div>
-                    <div class="framing-body">
-                        <h3>Framed Canvas (edge to edge)</h3>
-                        <ul>
-                            <li>Canvas is not stretched but mounted over a mdf board</li>
-                            <li>Comes with 0.5~1 inch wooden frame</li>
-                            <li>Ready to hang</li>
-                            <li>Premium look for home interiors</li>
-                        </ul>
-                        <div class="framing-meta"><span>Additional cost</span></div>
-                    </div>
-                </div>
-            </div>
-            <div class="highlight-box" style="margin-top:28px;">
-                <strong>Our recommendation:</strong>
-                Start with a Rolled Canvas. Once it arrives, take it to a local framer and choose a moulding that truly
-                complements your wall and home — you'll get a far more personalised result than any standard frame we
-                could ship.<br>
-                We pack every rolled artwork with love, protected inside a sturdy tube to ensure it reaches you in
-                perfect condition. If you would prefer to skip the hassle of framing, we can also frame it for you and
-                deliver it as ready to hang piece; however, please note that framing comes at an additional cost above
-                the base price.
-            </div>
-            <a href="#header" class="back-to-top">↑ Return to Index</a>
-        </section>
-
-        <!-- SECTION 03. Print vs Hand-Painted -->
-        <section id="compare">
-            <span class="section-tag">03. Print vs Hand-Painted</span>
-            <h2>Print vs Hand-Painted — what's the real difference?</h2>
-            <p>Both options use the same composition. Here's how they differ in feel, texture and ownership.</p>
-            <div class="compare-grid">
-                <div class="compare-col">
-                    <div class="compare-image-placeholder">
-                        <!-- Replace with: <img src="print-closeup.jpg" alt="Canvas Print texture close-up"> -->
-                        Add close-up photo of print texture here
-                    </div>
-                    <h3>🖼️ Canvas Print (Precision & Consistency)</h3>
-                    <p>A high-fidelity digital reproduction of the original artwork, printed on premium archival-grade
-                        textured canvas. Every gradient, every brush mark, every detail is faithfully reproduced.</p>
-                    <ul>
-                        <li>Printed on fine art canvas (Hahnemühle Daguerre or Felix Schoeller)</li>
-                        <li>Colours are vibrant and UV-resistant for long-lasting display</li>
-                        <li>Ideal if you want a perfect replica of the exact artwork shown</li>
-                        <li>More accessible price point than a hand-painted piece</li>
-                        <li>Suitable for gifting — arrives beautifully packaged</li>
-                    </ul>
-                </div>
-                <div class="compare-col">
-                    <div class="compare-image-placeholder">
-                        <!-- Replace with: <img src="handpainted-closeup.jpg" alt="Hand Painted texture close-up"> -->
-                        Add close-up photo of hand-painted texture here
-                    </div>
-                    <h3>🎨 Hand Painted (Texture & Authenticity)</h3>
-                    <p>A true original — each piece is recreated entirely by hand on artist-grade canvas. No two pieces
-                        are exactly alike; you're receiving a one-of-a-kind artwork with real paint and real character.
-                    </p>
-                    <ul>
-                        <li>Painted on Camel Artist Canvas Pad — artist-grade texture</li>
-                        <li>Subtle variations in brushwork make it uniquely yours</li>
-                        <li>Raised paint texture catches light beautifully on a wall</li>
-                        <li>You're owning a piece of original creative craft</li>
-                        <li>Higher value and a cherished heirloom for years to come</li>
-                    </ul>
-                </div>
-            </div>
-            <a href="#header" class="back-to-top">↑ Return to Index</a>
-        </section>
-
-        <!-- SECTION 04. Size at a Glance -->
-        <section id="size-guide">
-            <span class="section-tag">04. Size at a Glance</span>
-            <h2>How big will it look on your wall?</h2>
-            <p>It's hard to picture a size from inches alone. The illustration below shows each standard size relative
-                to a typical wall and sofa.</p>
-            <img src="room-mockup.png" alt="Room mockup showing artwork sizes on a wall"
-                style="width:100%;height:auto;margin-top:24px;border-radius:4px;">
-
-            <div class="size-legend">
-                <div class="size-legend-item">
-                    <div class="size-swatch" style="background:#e0c890;border:1.5px solid #c9a850;"></div> A4 — 8.3
-                    x 11.7"
-                </div>
-                <div class="size-legend-item">
-                    <div class="size-swatch" style="background:#b08d57;"></div> A3 — 11.7 x 16.5" (standard)
-                </div>
-                <div class="size-legend-item">
-                    <div class="size-swatch" style="background:#c09060;"></div> A2 — 16.5 × 23.4"
-                </div>
-                <div class="size-legend-item">
-                    <div class="size-swatch" style="background:#1a1a1a;"></div> A1 — 23.4 × 33.1"
-                </div>
-
-            </div>
-
-            <div class="highlight-box" style="margin-top:28px;">
-                <strong>Quick tip for sizing your wall</strong>
-                Cut a sheet of newspaper to the exact dimensions and hold it against your wall. It takes 30 seconds and
-                removes all the guesswork before you order.
-            </div>
-            <a href="#header" class="back-to-top">↑ Return to Index</a>
-        </section>
-
-        <!-- SECTION 05. Turnaround Timeline -->
-        <section id="timeline">
-            <span class="section-tag">05. Turnaround Timeline</span>
-            <h2>From order to your wall</h2>
-            <p>Every piece is made personally by me. The stages below reflect my genuine process. Your
-                confirmed dispatch date is always shared when I reply to confirm your order.</p>
-
-            <div class="highlight-box" style="margin-bottom:40px;">
-                <strong>A note on timing</strong>
-                I work solo and give every order my full attention. Rather than publishing fixed day counts that I can't
-                always guarantee, I show you the phases each order goes through. When you place your order I'll
-                personally confirm your dispatch date based on my current workload.
-            </div>
-
-            <div class="timeline-block">
-                <div class="timeline-header">
-                    <span class="tl-icon">🖼️</span>
-                    <div>
-                        <div class="tl-type">Canvas Print</div>
-                        <div class="tl-estimate">Usually the quickest — typically dispatched within 10 ~ 15 days of
-                            payment, except when prints are out of stock.
-                        </div>
-                    </div>
-                </div>
-                <div class="timeline">
-                    <div class="timeline-step">
-                        <div class="timeline-dot">📋</div>
-                        <h4>Order Confirmed</h4>
-                        <p>Payment received, artwork &amp; specs locked in</p>
-                        <div class="days">Phase 1</div>
-                    </div>
-                    <div class="timeline-step">
-                        <div class="timeline-dot">🖨️</div>
-                        <h4>Sent to Print</h4>
-                        <p>File prepared &amp; submitted to print lab on archival canvas</p>
-                        <div class="days">Phase 2</div>
-                    </div>
-                    <div class="timeline-step">
-                        <div class="timeline-dot">✅</div>
-                        <h4>Quality Check</h4>
-                        <p>Colour accuracy, edges &amp; surface inspected</p>
-                        <div class="days">Phase 3</div>
-                    </div>
-                    <div class="timeline-step">
-                        <div class="timeline-dot">📦</div>
-                        <h4>Packed &amp; Dispatched</h4>
-                        <p>Rolled, tubed &amp; shipped with a tracking number sent to you</p>
-                        <div class="days">Phase 4</div>
-                    </div>
-                    <div class="timeline-step">
-                        <div class="timeline-dot">🏠</div>
-                        <h4>Delivered</h4>
-                        <p>Courier transit to your door (varies by city)</p>
-                        <div class="days">Phase 5</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="timeline-block">
-                <div class="timeline-header">
-                    <span class="tl-icon">🎨</span>
-                    <div>
-                        <div class="tl-type">Hand Painted</div>
-                        <div class="tl-estimate">Requires painting + full drying time — allow a 3 ~ 4 weeks;
-                            your exact
-                            date confirmed at order.</div>
-                    </div>
-                </div>
-                <div class="timeline">
-                    <div class="timeline-step">
-                        <div class="timeline-dot">📋</div>
-                        <h4>Order Confirmed</h4>
-                        <p>Payment received, composition &amp; palette agreed</p>
-                        <div class="days">Phase 1</div>
-                    </div>
-                    <div class="timeline-step">
-                        <div class="timeline-dot">🎨</div>
-                        <h4>Painting</h4>
-                        <p>Hand-painted in layers — the most time-intensive stage</p>
-                        <div class="days">Phase 2</div>
-                    </div>
-                    <div class="timeline-step">
-                        <div class="timeline-dot">🌬️</div>
-                        <h4>Drying Period</h4>
-                        <p>Full cure time — essential before rolling to prevent cracking</p>
-                        <div class="days">Phase 3</div>
-                    </div>
-                    <div class="timeline-step">
-                        <div class="timeline-dot">✅</div>
-                        <h4>Quality Check</h4>
-                        <p>Final surface, colour &amp; detail review</p>
-                        <div class="days">Phase 4</div>
-                    </div>
-                    <div class="timeline-step">
-                        <div class="timeline-dot">🏠</div>
-                        <h4>Delivered</h4>
-                        <p>Carefully packed &amp; shipped with tracking</p>
-                        <div class="days">Phase 5</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="timeline-block" style="border-bottom:none;margin-bottom:0;">
-                <div class="timeline-header">
-                    <span class="tl-icon">✨</span>
-                    <div>
-                        <div class="tl-type">Commission</div>
-                        <div class="tl-estimate">Timeline discussed and agreed before work begins — typically 45 ~ 60
-                            days
-                            depending on size &amp; complexity.</div>
-                    </div>
-                </div>
-                <div class="timeline">
-                    <div class="timeline-step">
-                        <div class="timeline-dot">💬</div>
-                        <h4>Initial Discussion</h4>
-                        <p>Concept, size, mood &amp; references aligned</p>
-                        <div class="days">Phase 1</div>
-                    </div>
-                    <div class="timeline-step">
-                        <div class="timeline-dot">✏️</div>
-                        <h4>Sketch &amp; Approval</h4>
-                        <p>Composition sketch shared; revisions finalised before painting begins</p>
-                        <div class="days">Phase 2</div>
-                    </div>
-                    <div class="timeline-step">
-                        <div class="timeline-dot">💳</div>
-                        <h4>Deposit &amp; Work Begins</h4>
-                        <p>50% deposit confirms the order; painting starts</p>
-                        <div class="days">Phase 3</div>
-                    </div>
-                    <div class="timeline-step">
-                        <div class="timeline-dot">📸</div>
-                        <h4>Progress Updates</h4>
-                        <p>Photos shared at key milestones so you can follow along</p>
-                        <div class="days">Phase 4</div>
-                    </div>
-                    <div class="timeline-step">
-                        <div class="timeline-dot">✅</div>
-                        <h4>Final Approval</h4>
-                        <p>You sign off; balance payment due before dispatch</p>
-                        <div class="days">Phase 5</div>
-                    </div>
-                    <div class="timeline-step">
-                        <div class="timeline-dot">🏠</div>
-                        <h4>Delivered</h4>
-                        <p>Packed with care &amp; shipped to your door</p>
-                        <div class="days">Phase 6</div>
-                    </div>
-                </div>
-            </div>
-
-            <a href="#header" class="back-to-top">↑ Return to Index</a>
-        </section>
-
-        <!-- SECTION 06. Sizes & Pricing -->
-        <section id="pricing">
-            <span class="section-tag">06. Size, Pricing & Material</span>
-            <h2>Transparent pricing, no surprises (India Only)</h2>
-            <p>All prices below include shipping within India. Canvas Print and Hand Painted pieces are offered in A3
-                (12 × 16 inches). Commissions are flexible in size.</p>
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Option</th>
-                            <th>Size</th>
-                            <th>Price (Incl. Shipping)</th>
-                            <th>Material Details</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Canvas Print</strong></td>
-                            <td>A3 (12 x 16")</td>
-                            <td>₹7,000</td>
-                            <td>Printed on premium textured canvas <br>(e.g., Hahnemuhle Daguerre / Felix Schoeller)
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><strong>Hand Painted</strong></td>
-                            <td>A3 (12 x 16")</td>
-                            <td>₹14,000</td>
-                            <td>Created on Camel Artist Canvas Pad</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Commission</strong></td>
-                            <td>A4 to A1</td>
-                            <td>Starts from ₹20,000</td>
-                            <td>Camel Artist Canvas Pad / Rolls (based on size)</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <p><small>📍
-                    <strong>Shipping within India only.</strong> All prices include shipping to your doorstep. Stretched
-                    Canvas and Framed Canvas options carry an additional charge over the base prices listed above — this
-                    will be
-                    confirmed during your order conversation. <br> International shipping is also available; however, it
-                    will incur an additional shipping cost.</small></p>
-            <a href="#header" class="back-to-top">↑ Return to Index</a>
-        </section>
-
-        <!-- SECTION 07. Portfolio -->
-        <section id="portfolio">
-            <span class="section-tag">07. Portfolio</span>
-            <h2>Select a design you love</h2>
-            <p>Before ordering, please browse my portfolio to find the piece that resonates with you. Note down the name
-                of the artwork for your inquiry. Example: Fort Kochi illustration or KL02</p>
-            <a href="https://www.behance.net/ananditasen/projects" target="_blank" rel="noopener noreferrer"
-                style="color: var(--accent); font-weight: 600;">Check my full portfolio →</a><br>
-            <a href="#header" class="back-to-top">↑ Return to Index</a>
-        </section>
-
-        <!-- SECTION 08. Frequently Asked Questions -->
-        <section id="faq">
-            <span class="section-tag">08. Everything you need to know</span>
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-list">
-
-                <!-- Ordering & Process -->
-                <div class="faq-category">
-                    <h3 class="faq-category-title">Ordering &amp; Process</h3>
-                    <details class="faq-item">
-                        <summary>How do I place an order — is there a checkout?</summary>
-                        <div class="faq-answer">There's no automated checkout on this site. All orders are placed
-                            personally via WhatsApp or email (see footer below). This allows us to confirm details,
-                            discuss preferences, and ensure you're happy before work begins.</div>
-                    </details>
-                    <details class="faq-item">
-                        <summary>Can I cancel an order after placing it?</summary>
-                        <div class="faq-answer">For Canvas Prints and Hand Painted pieces, cancellations can be accepted
-                            before work has begun. Once production starts, cancellations are not possible as materials
-                            and time have already been committed. For Commissions, cancellations before the sketch stage
-                            will receive a refund of the deposit. After the sketch is approved and painting has begun,
-                            the deposit is non-refundable.</div>
-                    </details>
-                    <details class="faq-item">
-                        <summary>Can I see the artwork before it ships?</summary>
-                        <div class="faq-answer">Yes. For commissions, I share progress photos at the sketch and
-                            near-completion stages for your review. Final dispatch happens only after you're satisfied.
-                            For Canvas Prints and Hand Painted pieces, a photo of the finished work can be shared before
-                            packing if requested.</div>
-                    </details>
-                </div>
-
-                <!-- Product Information -->
-                <div class="faq-category">
-                    <h3 class="faq-category-title">Product Information</h3>
-                    <details class="faq-item">
-                        <summary>Is the Canvas Print hand-painted?</summary>
-                        <div class="faq-answer">No, these are digitally printed reproductions of original hand-painted
-                            artworks.</div>
-                    </details>
-                    <details class="faq-item">
-                        <summary>Will the Canvas Print look exactly like the preview?</summary>
-                        <div class="faq-answer">There may be minor variations in color or detail due to differences
-                            between screens and printed output.</div>
-                    </details>
-                    <details class="faq-item">
-                        <summary>What does "Rolled Canvas with white border" mean?</summary>
-                        <div class="faq-answer">Your artwork is printed or painted with a small white margin around the
-                            image — similar to a fine art print. This border is intended for framing or stretching,
-                            allowing the framer to mount the piece without cutting into the artwork itself.</div>
-                    </details>
-                </div>
-
-                <!-- Customization & Commissions -->
-                <div class="faq-category">
-                    <h3 class="faq-category-title">Customization &amp; Commissions</h3>
-                    <details class="faq-item">
-                        <summary>Can I customize the size?</summary>
-                        <div class="faq-answer">For Canvas Prints and Hand Painted pieces, A3 is currently the standard
-                            size. For Commissions, sizes from A4 to A1 are available — just reach out and we'll discuss
-                            what works best for your space and budget.</div>
-                    </details>
-                    <details class="faq-item">
-                        <summary>For a commission — how many revisions do I get?</summary>
-                        <div class="faq-answer">Each commission includes two rounds of revisions before painting begins.
-                            I'll share a composition sketch and color study for your approval. Once painting starts,
-                            major changes to composition aren't possible, so we ensure everything is finalized upfront.
-                        </div>
-                    </details>
-                </div>
-
-                <!-- Pricing & Payment -->
-                <div class="faq-category">
-                    <h3 class="faq-category-title">Pricing &amp; Payment</h3>
-                    <details class="faq-item">
-                        <summary>What payment methods do you accept?</summary>
-                        <div class="faq-answer">Within India, I accept UPI, bank transfer, and other standard methods —
-                            details will be shared when you reach out. For international orders, payment options will be
-                            discussed based on your location.</div>
-                    </details>
-                    <details class="faq-item">
-                        <summary>Do you offer Cash on Delivery (COD)?</summary>
-                        <div class="faq-answer">Currently, all orders are prepaid to ensure a smooth and committed
-                            process.</div>
-                    </details>
-                    <details class="faq-item">
-                        <summary>Is payment required upfront?</summary>
-                        <div class="faq-answer">For Canvas Prints and Hand Painted pieces, full payment is required
-                            before work begins. For Commissions, a 50% advance is required, with the remaining balance
-                            due before dispatch. Payment details will be shared when you reach out.</div>
-                    </details>
-                    <details class="faq-item">
-                        <summary>What's the deposit structure for a commission?</summary>
-                        <div class="faq-answer">Commissions require a 50% deposit upfront before work begins, with the
-                            remaining 50% due before dispatch.</div>
-                    </details>
-                </div>
-
-                <!-- Shipping & Delivery -->
-                <div class="faq-category">
-                    <h3 class="faq-category-title">Shipping &amp; Delivery</h3>
-                    <details class="faq-item">
-                        <summary>Do you provide a tracking number once shipped?</summary>
-                        <div class="faq-answer">Yes, once your order is dispatched you will receive a tracking number so
-                            you can follow your shipment in real time.</div>
-                    </details>
-                    <details class="faq-item">
-                        <summary>Do you ship internationally?</summary>
-                        <div class="faq-answer">Yes, we ship to most countries worldwide. Standard pricing currently
-                            applies only within India. For international orders, please contact me directly — shipping
-                            costs and timelines vary by destination.</div>
-                    </details>
-                    <details class="faq-item">
-                        <summary>Is the packaging safe for international shipping?</summary>
-                        <div class="faq-answer">Yes, prints are packed securely in protective tubes or reinforced
-                            cardboard packaging.</div>
-                    </details>
-                    <details class="faq-item">
-                        <summary>When will I receive my order?</summary>
-                        <div class="faq-answer">Prints ship within 10–15 days (subject to stock availability).
-                            Hand-painted works take 3–4 weeks to allow for painting and proper drying before quality
-                            checks. Commission timelines vary and will be shared during the discussion.</div>
-                    </details>
-                </div>
-
-                <!-- Returns, Damage & Support -->
-                <div class="faq-category">
-                    <h3 class="faq-category-title">Returns, Damage &amp; Support</h3>
-                    <details class="faq-item">
-                        <summary>Can I return or exchange a print?</summary>
-                        <div class="faq-answer">As each piece is made to order, returns for change of mind are not
-                            accepted. However, if there is a quality issue or transit damage, I will ensure it is
-                            resolved. Damages must be reported with an unboxing video within 12 hours of delivery.</div>
-                    </details>
-                    <details class="faq-item">
-                        <summary>What if my piece is damaged in transit?</summary>
-                        <div class="faq-answer">All pieces are carefully packed to prevent damage. In the unlikely event
-                            your artwork arrives damaged, photograph the packaging and artwork immediately upon unboxing
-                            and share it with me. An unboxing video within 12 hours is required. I will arrange a
-                            replacement or resolution as quickly as possible.</div>
-                    </details>
-                </div>
-
-                <!-- Care Instructions -->
-                <div class="faq-category">
-                    <h3 class="faq-category-title">Care Instructions</h3>
-                    <details class="faq-item">
-                        <summary>How should I care for my fine art print?</summary>
-                        <div class="faq-answer">
-                            <ul>
-                                <li><strong>Environment:</strong> Display prints indoors only, away from direct sunlight
-                                    to prevent
-                                    fading. Avoid areas with extreme changes in humidity, heat, or cold.
-                                </li>
-                                <li><strong>Cleaning:</strong> Display in a dust-free environment. Occasionally dust
-                                    with a clean, soft
-                                    brush or duster. Do not use cloth, water, or cleaning products.</li>
-                                <li><strong>Framing:</strong> Do not cover canvas prints with glass. Canvas needs to
-                                    "breathe" to prevent
-                                    moisture trap. If moisture does occur, place the frame in warm sunlight for one hour
-                                    per day for a week.</li>
-
-                            </ul>
-                        </div>
-                    </details>
-                </div>
-
-            </div>
-            <a href="#header" class="back-to-top">↑ Return to Index</a>
-        </section>
-    </div>
-    <!-- end .container -->
-
-    <!-- SECTION 09. Place Your Order — dark section outside container -->
-    <section id="order" style="background:#1a1a1a;padding:80px 0;border-bottom:none;">
+    <main>
         <div class="container">
-            <span class="section-tag" style="color:#b08d57;">09. Place Your Order</span>
-            <h2 style="color:#fff;font-size:2rem;margin-bottom:8px;">Ready to bring art home?</h2>
-            <p style="color:rgba(255,255,255,0.55);margin-bottom:36px;">Since each piece is prepared personally, I
-                handle all orders manually to ensure the best quality. Tap a button
-                below — it will open WhatsApp or your email app with a ready-made message template. Just fill in your
-                details and send.</p>
+            <nav id="index">
+                <div class="index-title">Information Index</div>
+                <div class="index-grid">
+                    <a href="#process">01. Three Ways to Own This Artwork</a>
+                    <a href="#which-option">02. Framing & Finishing</a>
+                    <a href="#compare">03. Print vs Hand-Painted</a>
+                    <a href="#size-guide">04. Size at a Glance</a>
+                    <a href="#timeline">05. Turnaround Timeline</a>
+                    <a href="#pricing">06. Sizes & Pricing</a>
+                    <a href="#portfolio">07. Portfolio</a>
+                    <a href="#faq">08. Frequently Asked Questions</a>
+                    <a href="#order">09. Place Your Order</a>
+                </div>
+            </nav>
 
-            <!-- Message template reference card -->
-            <div
-                style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:32px;margin-bottom:36px;">
-                <p
-                    style="color:rgba(255,255,255,0.4);font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;margin:0 0 16px;">
-                    What to include in your message</p>
-                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
-                    <div style="display:flex;gap:12px;align-items:flex-start;">
-                        <span style="color:#b08d57;font-size:1rem;flex-shrink:0;margin-top:2px;">👤</span>
-                        <div>
-                            <div style="color:#fff;font-size:0.85rem;font-weight:600;">Name</div>
-                            <div style="color:rgba(255,255,255,0.4);font-size:0.8rem;">Your full name</div>
+            <!-- SECTION 01. Three Ways to Own This Artwork -->
+            <section id="process">
+                <span class="section-tag">01. Three Ways to Own This Artwork</span>
+                <h2>Detailed Process</h2>
+                <p>Whether you are looking for an exact digital replica or a one-of-a-kind textured original, we have
+                    three
+                    ways to bring art into your home:</p>
+                <div class="grid-3">
+                    <div class="card">
+                        <span class="card-icon">🖼️</span>
+                        <h3>Canvas Print</h3>
+                        <p>A Canvas Print is a high-quality digital reproduction of the original artwork.</p>
+                        <ul>
+                            <li>Printed on premium textured canvas</li>
+                            <li>Captures colors and details with precision</li>
+                            <li>Ideal for modern homes and gifting</li>
+                            <li>Clean, consistent finish</li>
+                        </ul>
+                        <p><strong>Best for:</strong><br>Those who want an affordable yet premium-looking artwork.</p>
+                    </div>
+                    <div class="card">
+                        <span class="card-icon">🎨</span>
+                        <h3>Hand Painted</h3>
+                        <p>A Hand Painted artwork is a carefully recreated version of the original piece.</p>
+                        <ul>
+                            <li>I will personally recreate the piece on canvas</li>
+                            <li>While it follows the original design, every brushstroke is unique, giving the piece a
+                                physical texture and "soul" that only a handmade painting has.</li>
+                        </ul>
+                        <p><strong>Best for:</strong><br>Art lovers who value originality and texture.</p>
+                    </div>
+                    <div class="card">
+                        <span class="card-icon">✨</span>
+                        <h3>Commission</h3>
+                        <p>Custom-made for you. If you love a style but want something personal, let’s create it
+                            together.
+                        </p>
+                        <ul>
+                            <li>Fully customized artwork based on your idea</li>
+                            <li>Choose size ranging from A4 to A1, theme, colors, and style</li>
+                            <li>Collaborative process (discussion + approval)</li>
+                        </ul>
+                        <p><strong>Best for:</strong><br>Those who want a deeply personal or custom-designed artwork.
+                        </p>
+                    </div>
+                </div>
+                <a href="#header" class="back-to-top">↑ Return to Index</a>
+            </section>
+
+            <!-- SECTION 02. Framing & Finishing -->
+            <section id="which-option">
+                <span class="section-tag">02. Framing & Finishing</span>
+                <h2>Ready to hang or rolled?</h2>
+                <p>How your art arrives matters. We offer three finishing options to suit your home décor needs.</p>
+
+                <div class="framing-grid">
+
+                    <!-- Option 1: Rolled Canvas (Preferred) -->
+                    <div class="framing-card preferred">
+                        <div class="framing-image-placeholder">
+                            <!-- Replace the SVG below with <img src="your-image.jpg" alt="Rolled Canvas"> when ready -->
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="4" y="8" width="32" height="24" rx="2" stroke="#b08d57" stroke-width="1.5" />
+                                <path d="M12 20h16M16 15l-4 5 4 5" stroke="#b08d57" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            Image coming soon
+                        </div>
+                        <div class="framing-body">
+                            <div class="framing-badge">★ Preferred</div>
+                            <h3>Rolled Canvas</h3>
+                            <ul>
+                                <li>Shipped rolled in a protective tube</li>
+                                <li>Comes with white border for framing/stretching</li>
+                                <li>Ideal for framing locally to match your interior style</li>
+                                <li>Safer delivery and cost-effective shipping</li>
+                            </ul>
+                            <div class="framing-meta"><span>No extra cost</span></div>
                         </div>
                     </div>
-                    <div style="display:flex;gap:12px;align-items:flex-start;">
-                        <span style="color:#b08d57;font-size:1rem;flex-shrink:0;margin-top:2px;">📞</span>
-                        <div>
-                            <div style="color:#fff;font-size:0.85rem;font-weight:600;">Phone Number</div>
-                            <div style="color:rgba(255,255,255,0.4);font-size:0.8rem;">For order updates</div>
+
+                    <!-- Option 2: Stretched Canvas -->
+                    <div class="framing-card">
+                        <div class="framing-image-placeholder">
+                            <!-- Replace the SVG below with <img src="your-image.jpg" alt="Stretched Canvas"> when ready -->
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="4" y="8" width="32" height="24" rx="2" stroke="#999" stroke-width="1.5" />
+                                <rect x="8" y="12" width="24" height="16" rx="1" stroke="#999" stroke-width="1" />
+                                <path d="M4 10l4 4M36 10l-4 4M4 30l4-4M36 30l-4-4" stroke="#999" stroke-width="1.2"
+                                    stroke-linecap="round" />
+                            </svg>
+                            Image coming soon
+                        </div>
+                        <div class="framing-body">
+                            <h3>Stretched Canvas</h3>
+                            <ul>
+                                <li>Canvas stretched over a wooden frame</li>
+                                <li>Ready to hang</li>
+                                <li>Gallery-style presentation</li>
+                            </ul>
+                            <div class="framing-meta"><span>Additional cost</span></div>
                         </div>
                     </div>
-                    <div style="display:flex;gap:12px;align-items:flex-start;">
-                        <span style="color:#b08d57;font-size:1rem;flex-shrink:0;margin-top:2px;">🖼️</span>
-                        <div>
-                            <div style="color:#fff;font-size:0.85rem;font-weight:600;">Artwork Name</div>
-                            <div style="color:rgba(255,255,255,0.4);font-size:0.8rem;">From my portfolio</div>
+
+                    <!-- Option 3: Framed Canvas -->
+                    <div class="framing-card">
+                        <div class="framing-image-placeholder">
+                            <!-- Replace the SVG below with <img src="your-image.jpg" alt="Framed Canvas"> when ready -->
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="2" y="2" width="36" height="36" rx="2" stroke="#999" stroke-width="1.5" />
+                                <rect x="7" y="7" width="26" height="26" rx="1" stroke="#999" stroke-width="1" />
+                                <rect x="12" y="12" width="16" height="16" rx="1" stroke="#999" stroke-width="1"
+                                    stroke-dasharray="2 2" />
+                            </svg>
+                            Image coming soon
+                        </div>
+                        <div class="framing-body">
+                            <h3>Framed Canvas (edge to edge)</h3>
+                            <ul>
+                                <li>Canvas is not stretched but mounted over an MDF board</li>
+                                <li>Comes with 0.5~1 inch wooden frame</li>
+                                <li>Ready to hang</li>
+                                <li>Premium look for home interiors</li>
+                            </ul>
+                            <div class="framing-meta"><span>Additional cost</span></div>
                         </div>
                     </div>
-                    <div style="display:flex;gap:12px;align-items:flex-start;">
-                        <span style="color:#b08d57;font-size:1rem;flex-shrink:0;margin-top:2px;">🎨</span>
+                </div>
+                <div class="highlight-box" style="margin-top:28px;">
+                    <strong>Our recommendation:</strong>
+                    Start with a Rolled Canvas. Once it arrives, take it to a local framer and choose a moulding that
+                    truly
+                    complements your wall and home — you'll get a far more personalised result than any standard frame
+                    we
+                    could ship.<br>
+                    We pack every rolled artwork with love, protected inside a sturdy tube to ensure it reaches you in
+                    perfect condition. If you would prefer to skip the hassle of framing, we can also frame it for you
+                    and
+                    deliver it as a ready to hang piece; however, please note that framing comes at an additional cost
+                    above
+                    the base price.
+                </div>
+                <a href="#header" class="back-to-top">↑ Return to Index</a>
+            </section>
+
+            <!-- SECTION 03. Print vs Hand-Painted -->
+            <section id="compare">
+                <span class="section-tag">03. Print vs Hand-Painted</span>
+                <h2>Print vs Hand-Painted — what's the real difference?</h2>
+                <p>Both options use the same composition. Here's how they differ in feel, texture and ownership.</p>
+                <div class="compare-grid">
+                    <div class="compare-col">
+                        <div class="compare-image-placeholder">
+                            <!-- Replace with: <img src="print-closeup.jpg" alt="Canvas Print texture close-up"> -->
+                            Image coming soon
+                        </div>
+                        <h3>🖼️ Canvas Print (Precision & Consistency)</h3>
+                        <p>A high-fidelity digital reproduction of the original artwork, printed on premium
+                            archival-grade
+                            textured canvas. Every gradient, every brush mark, every detail is faithfully reproduced.
+                        </p>
+                        <ul>
+                            <li>Printed on fine art canvas (Hahnemühle Daguerre or Felix Schoeller)</li>
+                            <li>Colours are vibrant and UV-resistant for long-lasting display</li>
+                            <li>Ideal if you want a perfect replica of the exact artwork shown</li>
+                            <li>More accessible price point than a hand-painted piece</li>
+                            <li>Suitable for gifting — arrives beautifully packaged</li>
+                        </ul>
+                    </div>
+                    <div class="compare-col">
+                        <div class="compare-image-placeholder">
+                            <!-- Replace with: <img src="handpainted-closeup.jpg" alt="Hand Painted texture close-up"> -->
+                            Image coming soon
+                        </div>
+                        <h3>🎨 Hand Painted (Texture & Authenticity)</h3>
+                        <p>A true original — each piece is recreated entirely by hand on artist-grade canvas. No two
+                            pieces
+                            are exactly alike; you're receiving a one-of-a-kind artwork with real paint and real
+                            character.
+                        </p>
+                        <ul>
+                            <li>Painted on Camel Artist Canvas Pad — artist-grade texture</li>
+                            <li>Subtle variations in brushwork make it uniquely yours</li>
+                            <li>Raised paint texture catches light beautifully on a wall</li>
+                            <li>You're owning a piece of original creative craft</li>
+                            <li>Higher value and a cherished heirloom for years to come</li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="#header" class="back-to-top">↑ Return to Index</a>
+            </section>
+
+            <!-- SECTION 04. Size at a Glance -->
+            <section id="size-guide">
+                <span class="section-tag">04. Size at a Glance</span>
+                <h2>How big will it look on your wall?</h2>
+                <p>It's hard to picture a size from inches alone. The illustration below shows each standard size
+                    relative
+                    to a typical wall and sofa.</p>
+                <img src="room-mockup.png" alt="Room mockup showing artwork sizes on a wall" loading="lazy"
+                    style="width:100%;height:auto;margin-top:24px;border-radius:4px;">
+
+                <div class="size-legend">
+                    <div class="size-legend-item">
+                        <div class="size-swatch" style="background:#e0c890;border:1.5px solid #c9a850;"></div> A4 — 8.3
+                        × 11.7"
+                    </div>
+                    <div class="size-legend-item">
+                        <div class="size-swatch" style="background:#b08d57;"></div> A3 — 11.7 × 16.5" (standard)
+                    </div>
+                    <div class="size-legend-item">
+                        <div class="size-swatch" style="background:#c09060;"></div> A2 — 16.5 × 23.4"
+                    </div>
+                    <div class="size-legend-item">
+                        <div class="size-swatch" style="background:#1a1a1a;"></div> A1 — 23.4 × 33.1"
+                    </div>
+
+                </div>
+
+                <div class="highlight-box" style="margin-top:28px;">
+                    <strong>Quick tip for sizing your wall</strong>
+                    Cut a sheet of newspaper to the exact dimensions and hold it against your wall. It takes 30 seconds
+                    and
+                    removes all the guesswork before you order.
+                </div>
+                <a href="#header" class="back-to-top">↑ Return to Index</a>
+            </section>
+
+            <!-- SECTION 05. Turnaround Timeline -->
+            <section id="timeline">
+                <span class="section-tag">05. Turnaround Timeline</span>
+                <h2>From order to your wall</h2>
+                <p>Every piece is made personally by me. The stages below reflect my genuine process. Your
+                    confirmed dispatch date is always shared when I reply to confirm your order.</p>
+
+                <div class="highlight-box" style="margin-bottom:40px;">
+                    <strong>A note on timing</strong>
+                    I work solo and give every order my full attention. Rather than publishing fixed day counts that I
+                    can't
+                    always guarantee, I show you the phases each order goes through. When you place your order I'll
+                    personally confirm your dispatch date based on my current workload.
+                </div>
+
+                <div class="timeline-block">
+                    <div class="timeline-header">
+                        <span class="tl-icon">🖼️</span>
                         <div>
-                            <div style="color:#fff;font-size:0.85rem;font-weight:600;">Option</div>
-                            <div style="color:rgba(255,255,255,0.4);font-size:0.8rem;">Print / Hand Painted / Commission
+                            <div class="tl-type">Canvas Print</div>
+                            <div class="tl-estimate">Usually the quickest — typically dispatched within 10 ~ 15 days of
+                                payment, except when prints are out of stock.
                             </div>
                         </div>
                     </div>
-                    <div style="display:flex;gap:12px;align-items:flex-start;">
-                        <span style="color:#b08d57;font-size:1rem;flex-shrink:0;margin-top:2px;">📦</span>
-                        <div>
-                            <div style="color:#fff;font-size:0.85rem;font-weight:600;">Finishing</div>
-                            <div style="color:rgba(255,255,255,0.4);font-size:0.8rem;">Rolled / Stretched / Framed</div>
+                    <div class="timeline">
+                        <div class="timeline-step">
+                            <div class="timeline-dot">📋</div>
+                            <h4>Order Confirmed</h4>
+                            <p>Payment received, artwork &amp; specs locked in</p>
+                            <div class="days">Phase 1</div>
                         </div>
-                    </div>
-                    <div style="display:flex;gap:12px;align-items:flex-start;">
-                        <span style="color:#b08d57;font-size:1rem;flex-shrink:0;margin-top:2px;">🗺️</span>
-                        <div>
-                            <div style="color:#fff;font-size:0.85rem;font-weight:600;">Shipping City</div>
-                            <div style="color:rgba(255,255,255,0.4);font-size:0.8rem;">Your delivery city</div>
+                        <div class="timeline-step">
+                            <div class="timeline-dot">🖨️</div>
+                            <h4>Sent to Print</h4>
+                            <p>File prepared &amp; submitted to print lab on archival canvas</p>
+                            <div class="days">Phase 2</div>
                         </div>
-                    </div>
-                    <div style="display:flex;gap:12px;align-items:flex-start;">
-                        <span style="color:#b08d57;font-size:1rem;flex-shrink:0;margin-top:2px;">💬</span>
-                        <div>
-                            <div style="color:#fff;font-size:0.85rem;font-weight:600;">Notes</div>
-                            <div style="color:rgba(255,255,255,0.4);font-size:0.8rem;">Commission brief, custom size,
-                                questions</div>
+                        <div class="timeline-step">
+                            <div class="timeline-dot">✅</div>
+                            <h4>Quality Check</h4>
+                            <p>Colour accuracy, edges &amp; surface inspected</p>
+                            <div class="days">Phase 3</div>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="timeline-dot">📦</div>
+                            <h4>Packed &amp; Dispatched</h4>
+                            <p>Rolled, tubed &amp; shipped with a tracking number sent to you</p>
+                            <div class="days">Phase 4</div>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="timeline-dot">🏠</div>
+                            <h4>Delivered</h4>
+                            <p>Courier transit to your door (varies by city)</p>
+                            <div class="days">Phase 5</div>
                         </div>
                     </div>
                 </div>
 
-            </div>
+                <div class="timeline-block">
+                    <div class="timeline-header">
+                        <span class="tl-icon">🎨</span>
+                        <div>
+                            <div class="tl-type">Hand Painted</div>
+                            <div class="tl-estimate">Requires painting + full drying time — allow 3 ~ 4 weeks;
+                                your exact
+                                date confirmed at order.</div>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-step">
+                            <div class="timeline-dot">📋</div>
+                            <h4>Order Confirmed</h4>
+                            <p>Payment received, composition &amp; palette agreed</p>
+                            <div class="days">Phase 1</div>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="timeline-dot">🎨</div>
+                            <h4>Painting</h4>
+                            <p>Hand-painted in layers — the most time-intensive stage</p>
+                            <div class="days">Phase 2</div>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="timeline-dot">🌬️</div>
+                            <h4>Drying Period</h4>
+                            <p>Full cure time — essential before rolling to prevent cracking</p>
+                            <div class="days">Phase 3</div>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="timeline-dot">✅</div>
+                            <h4>Quality Check</h4>
+                            <p>Final surface, colour &amp; detail review</p>
+                            <div class="days">Phase 4</div>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="timeline-dot">🏠</div>
+                            <h4>Delivered</h4>
+                            <p>Carefully packed &amp; shipped with tracking</p>
+                            <div class="days">Phase 5</div>
+                        </div>
+                    </div>
+                </div>
 
-            <!-- Contact buttons -->
-            <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;">
+                <div class="timeline-block" style="border-bottom:none;margin-bottom:0;">
+                    <div class="timeline-header">
+                        <span class="tl-icon">✨</span>
+                        <div>
+                            <div class="tl-type">Commission</div>
+                            <div class="tl-estimate">Timeline discussed and agreed before work begins — typically 45 ~
+                                60
+                                days
+                                depending on size &amp; complexity.</div>
+                        </div>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-step">
+                            <div class="timeline-dot">💬</div>
+                            <h4>Initial Discussion</h4>
+                            <p>Concept, size, mood &amp; references aligned</p>
+                            <div class="days">Phase 1</div>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="timeline-dot">✏️</div>
+                            <h4>Sketch &amp; Approval</h4>
+                            <p>Composition sketch shared; revisions finalised before painting begins</p>
+                            <div class="days">Phase 2</div>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="timeline-dot">💳</div>
+                            <h4>Deposit &amp; Work Begins</h4>
+                            <p>50% deposit confirms the order; painting starts</p>
+                            <div class="days">Phase 3</div>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="timeline-dot">📸</div>
+                            <h4>Progress Updates</h4>
+                            <p>Photos shared at key milestones so you can follow along</p>
+                            <div class="days">Phase 4</div>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="timeline-dot">✅</div>
+                            <h4>Final Approval</h4>
+                            <p>You sign off; balance payment due before dispatch</p>
+                            <div class="days">Phase 5</div>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="timeline-dot">🏠</div>
+                            <h4>Delivered</h4>
+                            <p>Packed with care &amp; shipped to your door</p>
+                            <div class="days">Phase 6</div>
+                        </div>
+                    </div>
+                </div>
 
-                <!-- ═══════════════════════════════════════════════════════════════
+                <a href="#header" class="back-to-top">↑ Return to Index</a>
+            </section>
+
+            <!-- SECTION 06. Sizes & Pricing -->
+            <section id="pricing">
+                <span class="section-tag">06. Size, Pricing & Material</span>
+                <h2>Transparent pricing, no surprises (India Only)</h2>
+                <p>All prices below include shipping within India. Canvas Print and Hand Painted pieces are offered in
+                    A3
+                    (12 × 16 inches). Commissions are flexible in size.</p>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Option</th>
+                                <th>Size</th>
+                                <th>Price (Incl. Shipping)</th>
+                                <th>Material Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Canvas Print</strong></td>
+                                <td>A3 (12 × 16")</td>
+                                <td>₹7,000</td>
+                                <td>Printed on premium textured canvas <br>(e.g., Hahnemuhle Daguerre / Felix Schoeller)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hand Painted</strong></td>
+                                <td>A3 (12 × 16")</td>
+                                <td>₹14,000</td>
+                                <td>Created on Camel Artist Canvas Pad</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Commission</strong></td>
+                                <td>A4 to A1</td>
+                                <td>Starts from ₹20,000</td>
+                                <td>Camel Artist Canvas Pad / Rolls (based on size)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p><small>📍
+                        <strong>Shipping within India only.</strong> All prices include shipping to your doorstep.
+                        Stretched
+                        Canvas and Framed Canvas options carry an additional charge over the base prices listed above —
+                        this
+                        will be
+                        confirmed during your order conversation. <br> International shipping is also available;
+                        however, it
+                        will incur an additional shipping cost.</small></p>
+                <a href="#header" class="back-to-top">↑ Return to Index</a>
+            </section>
+
+            <!-- SECTION 07. Portfolio -->
+            <section id="portfolio">
+                <span class="section-tag">07. Portfolio</span>
+                <h2>Select a design you love</h2>
+                <p>Before ordering, please browse my portfolio to find the piece that resonates with you. Note down the
+                    name
+                    of the artwork for your inquiry. Example: Fort Kochi illustration or KL02</p>
+                <a href="https://www.behance.net/ananditasen/projects" target="_blank" rel="noopener noreferrer"
+                    style="color: var(--accent); font-weight: 600;">Check my full portfolio →</a><br>
+                <a href="#header" class="back-to-top">↑ Return to Index</a>
+            </section>
+
+            <!-- SECTION 08. Frequently Asked Questions -->
+            <section id="faq">
+                <span class="section-tag">08. Everything you need to know</span>
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-list">
+
+                    <!-- Ordering & Process -->
+                    <div class="faq-category">
+                        <h3 class="faq-category-title">Ordering &amp; Process</h3>
+                        <details class="faq-item">
+                            <summary>How do I place an order — is there a checkout?</summary>
+                            <div class="faq-answer">There's no automated checkout on this site. All orders are placed
+                                personally via WhatsApp or email (see footer below). This allows us to confirm details,
+                                discuss preferences, and ensure you're happy before work begins.</div>
+                        </details>
+                        <details class="faq-item">
+                            <summary>Can I cancel an order after placing it?</summary>
+                            <div class="faq-answer">For Canvas Prints and Hand Painted pieces, cancellations can be
+                                accepted
+                                before work has begun. Once production starts, cancellations are not possible as
+                                materials
+                                and time have already been committed. For Commissions, cancellations before the sketch
+                                stage
+                                will receive a refund of the deposit. After the sketch is approved and painting has
+                                begun,
+                                the deposit is non-refundable.</div>
+                        </details>
+                        <details class="faq-item">
+                            <summary>Can I see the artwork before it ships?</summary>
+                            <div class="faq-answer">Yes. For commissions, I share progress photos at the sketch and
+                                near-completion stages for your review. Final dispatch happens only after you're
+                                satisfied.
+                                For Canvas Prints and Hand Painted pieces, a photo of the finished work can be shared
+                                before
+                                packing if requested.</div>
+                        </details>
+                    </div>
+
+                    <!-- Product Information -->
+                    <div class="faq-category">
+                        <h3 class="faq-category-title">Product Information</h3>
+                        <details class="faq-item">
+                            <summary>Is the Canvas Print hand-painted?</summary>
+                            <div class="faq-answer">No, these are digitally printed reproductions of original
+                                hand-painted
+                                artworks.</div>
+                        </details>
+                        <details class="faq-item">
+                            <summary>Will the Canvas Print look exactly like the preview?</summary>
+                            <div class="faq-answer">There may be minor variations in color or detail due to differences
+                                between screens and printed output.</div>
+                        </details>
+                        <details class="faq-item">
+                            <summary>What does "Rolled Canvas with white border" mean?</summary>
+                            <div class="faq-answer">Your artwork is printed or painted with a small white margin around
+                                the
+                                image — similar to a fine art print. This border is intended for framing or stretching,
+                                allowing the framer to mount the piece without cutting into the artwork itself.</div>
+                        </details>
+                    </div>
+
+                    <!-- Customization & Commissions -->
+                    <div class="faq-category">
+                        <h3 class="faq-category-title">Customization &amp; Commissions</h3>
+                        <details class="faq-item">
+                            <summary>Can I customize the size?</summary>
+                            <div class="faq-answer">For Canvas Prints and Hand Painted pieces, A3 is currently the
+                                standard
+                                size. For Commissions, sizes from A4 to A1 are available — just reach out and we'll
+                                discuss
+                                what works best for your space and budget.</div>
+                        </details>
+                        <details class="faq-item">
+                            <summary>For a commission — how many revisions do I get?</summary>
+                            <div class="faq-answer">Each commission includes two rounds of revisions before painting
+                                begins.
+                                I'll share a composition sketch and color study for your approval. Once painting starts,
+                                major changes to composition aren't possible, so we ensure everything is finalized
+                                upfront.
+                            </div>
+                        </details>
+                    </div>
+
+                    <!-- Pricing & Payment -->
+                    <div class="faq-category">
+                        <h3 class="faq-category-title">Pricing &amp; Payment</h3>
+                        <details class="faq-item">
+                            <summary>What payment methods do you accept?</summary>
+                            <div class="faq-answer">Within India, I accept UPI, bank transfer, and other standard
+                                methods —
+                                details will be shared when you reach out. For international orders, payment options
+                                will be
+                                discussed based on your location.</div>
+                        </details>
+                        <details class="faq-item">
+                            <summary>Do you offer Cash on Delivery (COD)?</summary>
+                            <div class="faq-answer">Currently, all orders are prepaid to ensure a smooth and committed
+                                process.</div>
+                        </details>
+                        <details class="faq-item">
+                            <summary>Is payment required upfront?</summary>
+                            <div class="faq-answer">For Canvas Prints and Hand Painted pieces, full payment is required
+                                before work begins. For Commissions, a 50% advance is required, with the remaining
+                                balance
+                                due before dispatch. Payment details will be shared when you reach out.</div>
+                        </details>
+                        <details class="faq-item">
+                            <summary>What's the deposit structure for a commission?</summary>
+                            <div class="faq-answer">Commissions require a 50% deposit upfront before work begins, with
+                                the
+                                remaining 50% due before dispatch.</div>
+                        </details>
+                    </div>
+
+                    <!-- Shipping & Delivery -->
+                    <div class="faq-category">
+                        <h3 class="faq-category-title">Shipping &amp; Delivery</h3>
+                        <details class="faq-item">
+                            <summary>Do you provide a tracking number once shipped?</summary>
+                            <div class="faq-answer">Yes, once your order is dispatched you will receive a tracking
+                                number so
+                                you can follow your shipment in real time.</div>
+                        </details>
+                        <details class="faq-item">
+                            <summary>Do you ship internationally?</summary>
+                            <div class="faq-answer">Yes, we ship to most countries worldwide. Standard pricing currently
+                                applies only within India. For international orders, please contact me directly —
+                                shipping
+                                costs and timelines vary by destination.</div>
+                        </details>
+                        <details class="faq-item">
+                            <summary>Is the packaging safe for international shipping?</summary>
+                            <div class="faq-answer">Yes, prints are packed securely in protective tubes or reinforced
+                                cardboard packaging.</div>
+                        </details>
+                        <details class="faq-item">
+                            <summary>When will I receive my order?</summary>
+                            <div class="faq-answer">Prints ship within 10–15 days (subject to stock availability).
+                                Hand-painted works take 3–4 weeks to allow for painting and proper drying before quality
+                                checks. Commission timelines vary and will be shared during the discussion.</div>
+                        </details>
+                    </div>
+
+                    <!-- Returns, Damage & Support -->
+                    <div class="faq-category">
+                        <h3 class="faq-category-title">Returns, Damage &amp; Support</h3>
+                        <details class="faq-item">
+                            <summary>Can I return or exchange a print?</summary>
+                            <div class="faq-answer">As each piece is made to order, returns for change of mind are not
+                                accepted. However, if there is a quality issue or transit damage, I will ensure it is
+                                resolved. Damages must be reported with an unboxing video within 12 hours of delivery.
+                            </div>
+                        </details>
+                        <details class="faq-item">
+                            <summary>What if my piece is damaged in transit?</summary>
+                            <div class="faq-answer">All pieces are carefully packed to prevent damage. In the unlikely
+                                event
+                                your artwork arrives damaged, photograph the packaging and artwork immediately upon
+                                unboxing
+                                and share it with me. An unboxing video within 12 hours is required. I will arrange a
+                                replacement or resolution as quickly as possible.</div>
+                        </details>
+                    </div>
+
+                    <!-- Care Instructions -->
+                    <div class="faq-category">
+                        <h3 class="faq-category-title">Care Instructions</h3>
+                        <details class="faq-item">
+                            <summary>How should I care for my fine art print?</summary>
+                            <div class="faq-answer">
+                                <ul>
+                                    <li><strong>Environment:</strong> Display prints indoors only, away from direct
+                                        sunlight
+                                        to prevent
+                                        fading. Avoid areas with extreme changes in humidity, heat, or cold.
+                                    </li>
+                                    <li><strong>Cleaning:</strong> Display in a dust-free environment. Occasionally dust
+                                        with a clean, soft
+                                        brush or duster. Do not use cloth, water, or cleaning products.</li>
+                                    <li><strong>Framing:</strong> Do not cover canvas prints with glass. Canvas needs to
+                                        "breathe" to prevent
+                                        moisture trap. If moisture does occur, place the frame in warm sunlight for one
+                                        hour
+                                        per day for a week.</li>
+
+                                </ul>
+                            </div>
+                        </details>
+                    </div>
+
+                </div>
+                <a href="#header" class="back-to-top">↑ Return to Index</a>
+            </section>
+        </div>
+        <!-- end .container -->
+
+        <!-- SECTION 09. Place Your Order — dark section outside container -->
+        <section id="order" style="background:#1a1a1a;padding:80px 0;border-bottom:none;">
+            <div class="container">
+                <span class="section-tag" style="color:#b08d57;">09. Place Your Order</span>
+                <h2 style="color:#fff;font-size:2rem;margin-bottom:8px;">Ready to bring art home?</h2>
+                <p style="color:rgba(255,255,255,0.55);margin-bottom:36px;">Since each piece is prepared personally, I
+                    handle all orders manually to ensure the best quality.</p>
+                <p style="color:#b08d57;margin-bottom:36px;">
+                    You don’t need to type anything manually. Just click a button below — this message will be
+                    auto-filled in WhatsApp or Email. Simply edit your details and send.
+                </p>
+
+                <!-- Message template reference card -->
+                <div class="card-dark">
+                    <p
+                        style="color:rgba(255,255,255,0.4);font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;margin:0 0 16px;">
+                        This message will be auto-filled for you</p>
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;">
+                        <div style="display:flex;gap:12px;align-items:flex-start;">
+                            <span style="color:#b08d57;font-size:1rem;flex-shrink:0;margin-top:2px;">👤</span>
+                            <div>
+                                <div style="color:#fff;font-size:0.85rem;font-weight:600;">Name</div>
+                                <div style="color:rgba(255,255,255,0.4);font-size:0.8rem;">Your full name</div>
+                            </div>
+                        </div>
+                        <div style="display:flex;gap:12px;align-items:flex-start;">
+                            <span style="color:#b08d57;font-size:1rem;flex-shrink:0;margin-top:2px;">📞</span>
+                            <div>
+                                <div style="color:#fff;font-size:0.85rem;font-weight:600;">Phone Number</div>
+                                <div style="color:rgba(255,255,255,0.4);font-size:0.8rem;">For order updates</div>
+                            </div>
+                        </div>
+                        <div style="display:flex;gap:12px;align-items:flex-start;">
+                            <span style="color:#b08d57;font-size:1rem;flex-shrink:0;margin-top:2px;">🖼️</span>
+                            <div>
+                                <div style="color:#fff;font-size:0.85rem;font-weight:600;">Artwork Name</div>
+                                <div style="color:rgba(255,255,255,0.4);font-size:0.8rem;">From my portfolio</div>
+                            </div>
+                        </div>
+                        <div style="display:flex;gap:12px;align-items:flex-start;">
+                            <span style="color:#b08d57;font-size:1rem;flex-shrink:0;margin-top:2px;">🎨</span>
+                            <div>
+                                <div style="color:#fff;font-size:0.85rem;font-weight:600;">Option</div>
+                                <div style="color:rgba(255,255,255,0.4);font-size:0.8rem;">Print / Hand Painted /
+                                    Commission
+                                </div>
+                            </div>
+                        </div>
+                        <div style="display:flex;gap:12px;align-items:flex-start;">
+                            <span style="color:#b08d57;font-size:1rem;flex-shrink:0;margin-top:2px;">📦</span>
+                            <div>
+                                <div style="color:#fff;font-size:0.85rem;font-weight:600;">Finishing</div>
+                                <div style="color:rgba(255,255,255,0.4);font-size:0.8rem;">Rolled / Stretched / Framed
+                                </div>
+                            </div>
+                        </div>
+                        <div style="display:flex;gap:12px;align-items:flex-start;">
+                            <span style="color:#b08d57;font-size:1rem;flex-shrink:0;margin-top:2px;">🗺️</span>
+                            <div>
+                                <div style="color:#fff;font-size:0.85rem;font-weight:600;">Shipping City</div>
+                                <div style="color:rgba(255,255,255,0.4);font-size:0.8rem;">Your delivery city</div>
+                            </div>
+                        </div>
+                        <div style="display:flex;gap:12px;align-items:flex-start;">
+                            <span style="color:#b08d57;font-size:1rem;flex-shrink:0;margin-top:2px;">💬</span>
+                            <div>
+                                <div style="color:#fff;font-size:0.85rem;font-weight:600;">Notes</div>
+                                <div style="color:rgba(255,255,255,0.4);font-size:0.8rem;">Commission brief, custom
+                                    size,
+                                    questions</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <p style="text-align:center;color:#b08d57;font-size:0.8rem;margin:12px 0 20px;">
+                    ↓ This exact message will open when you click below
+                </p>
+
+                <!-- Contact buttons -->
+                <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;">
+
+                    <!-- ═══════════════════════════════════════════════════════════════
                  TO ENABLE WHATSAPP: remove the class "whatsapp-disabled" from
                  the <a> tag below, then replace YOUR_WHATSAPP_NUMBER in the
                  href with your number (country code + digits, no + or spaces,
                  e.g. 919876543210). Also remove the "Coming soon" <span>.
                  ═══════════════════════════════════════════════════════════════ -->
-                <a href="https://wa.me/YOUR_WHATSAPP_NUMBER?text=Hi!%20I%E2%80%99d%20like%20to%20place%20an%20art%20order.%0A%0A%F0%9F%91%A4%20Name%3A%20%5Benter%20name%5D%0A%F0%9F%93%9E%20Phone%3A%20%5Benter%20number%5D%0A%F0%9F%96%BC%EF%B8%8F%20Artwork%20Name%3A%20%5Benter%20name%5D%0A%F0%9F%8E%A8%20Option%3A%20%5BCanvas%20Print%20%2F%20Hand%20Painted%20%2F%20Commission%5D%0A%F0%9F%93%A6%20Finishing%3A%20%5BRolled%20%2F%20Stretched%20%2F%20Framed%5D%0A%F0%9F%97%BA%EF%B8%8F%20Shipping%20City%3A%20%5Benter%20city%5D%0A%F0%9F%92%AC%20Notes%3A%20%5Banything%20else%5D%0A%0APlease%20let%20me%20know%20the%20next%20steps.%20Thank%20you!"
-                    target="_blank" rel="noopener noreferrer" class="whatsapp-disabled" aria-disabled="true"
-                    style="display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;padding:16px 32px;border-radius:3px;text-decoration:none;font-family:'Inter',sans-serif;font-weight:600;font-size:0.95rem;position:relative;">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                    </svg>
-                    Order via WhatsApp
-                    <span
-                        style="background:rgba(0,0,0,0.3);font-size:0.65rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;padding:2px 7px;border-radius:2px;margin-left:4px;">Coming
-                        soon</span>
-                </a>
+                    <a href="https://wa.me/YOUR_WHATSAPP_NUMBER?text=Hi!%20I%E2%80%99d%20like%20to%20place%20an%20art%20order.%0A%0A%F0%9F%91%A4%20Name%3A%20%5Benter%20name%5D%0A%F0%9F%93%9E%20Phone%3A%20%5Benter%20number%5D%0A%F0%9F%96%BC%EF%B8%8F%20Artwork%20Name%3A%20%5Benter%20name%5D%0A%F0%9F%8E%A8%20Option%3A%20%5BCanvas%20Print%20%2F%20Hand%20Painted%20%2F%20Commission%5D%0A%F0%9F%93%A6%20Finishing%3A%20%5BRolled%20%2F%20Stretched%20%2F%20Framed%5D%0A%F0%9F%97%BA%EF%B8%8F%20Shipping%20City%3A%20%5Benter%20city%5D%0A%F0%9F%92%AC%20Notes%3A%20%5Banything%20else%5D%0A%0APlease%20let%20me%20know%20the%20next%20steps.%20Thank%20you!"
+                        target="_blank" rel="noopener noreferrer" class="whatsapp-disabled" aria-disabled="true"
+                        style="display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff;padding:16px 32px;border-radius:3px;text-decoration:none;font-family:'Inter',sans-serif;font-weight:600;font-size:0.95rem;position:relative;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                        </svg>
+                        Order via WhatsApp
+                        <span
+                            style="background:rgba(0,0,0,0.3);font-size:0.65rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;padding:2px 7px;border-radius:2px;margin-left:4px;">Coming
+                            soon</span>
+                    </a>
 
-                <!-- ═══════════════════════════════════════════════════════════════
+                    <!-- ═══════════════════════════════════════════════════════════════
                  EMAIL: replace YOUR_EMAIL@DOMAIN.COM with your actual address.
                  ═══════════════════════════════════════════════════════════════ -->
-                <a href="mailto:anandita.senneogi@gmail.com?subject=Art%20Order%20Enquiry&body=Hi!%20I%E2%80%99d%20like%20to%20place%20an%20art%20order.%0A%0A%F0%9F%91%A4%20Name%3A%20%5Benter%20name%5D%0A%F0%9F%93%9E%20Phone%3A%20%5Benter%20number%5D%0A%F0%9F%96%BC%EF%B8%8F%20Artwork%20Name%3A%20%5Benter%20name%5D%0A%F0%9F%8E%A8%20Option%3A%20%5BCanvas%20Print%20%2F%20Hand%20Painted%20%2F%20Commission%5D%0A%F0%9F%93%A6%20Finishing%3A%20%5BRolled%20%2F%20Stretched%20%2F%20Framed%5D%0A%F0%9F%97%BA%EF%B8%8F%20Shipping%20City%3A%20%5Benter%20city%5D%0A%F0%9F%92%AC%20Notes%3A%20%5Banything%20else%5D%0A%0APlease%20let%20me%20know%20the%20next%20steps.%20Thank%20you!"
-                    style="display:inline-flex;align-items:center;gap:10px;background:#fff;color:#1a1a1a;padding:16px 32px;border-radius:3px;text-decoration:none;font-family:'Inter',sans-serif;font-weight:600;font-size:0.95rem;">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                        <polyline points="22,6 12,13 2,6" />
-                    </svg>
-                    Order via Email
-                </a>
+                    <a href="mailto:anandita.senneogi@gmail.com?subject=Art%20Order%20Enquiry&body=Hi!%20I%E2%80%99d%20like%20to%20place%20an%20art%20order.%0A%0A%F0%9F%91%A4%20Name%3A%20%5Benter%20name%5D%0A%F0%9F%93%9E%20Phone%3A%20%5Benter%20number%5D%0A%F0%9F%96%BC%EF%B8%8F%20Artwork%20Name%3A%20%5Benter%20name%5D%0A%F0%9F%8E%A8%20Option%3A%20%5BCanvas%20Print%20%2F%20Hand%20Painted%20%2F%20Commission%5D%0A%F0%9F%93%A6%20Finishing%3A%20%5BRolled%20%2F%20Stretched%20%2F%20Framed%5D%0A%F0%9F%97%BA%EF%B8%8F%20Shipping%20City%3A%20%5Benter%20city%5D%0A%F0%9F%92%AC%20Notes%3A%20%5Banything%20else%5D%0A%0APlease%20let%20me%20know%20the%20next%20steps.%20Thank%20you!"
+                        style="display:inline-flex;align-items:center;gap:10px;background:#fff;color:#1a1a1a;padding:16px 32px;border-radius:3px;text-decoration:none;font-family:'Inter',sans-serif;font-weight:600;font-size:0.95rem;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                        Order via Email
+                    </a>
+                </div>
+                <p style="color:rgba(255,255,255,0.3);font-size:0.78rem;margin-top:20px;line-height:1.6;">
+                    No form submission needed — the button opens your app with the message already written.
+                </p>
+                <a href="#header" class="back-to-top">↑ Return to Index</a>
             </div>
-            <p style="color:rgba(255,255,255,0.3);font-size:0.78rem;margin-top:20px;line-height:1.6;">
-                Clicking either button opens WhatsApp or your email app with a pre-filled message template. Simply fill
-                in your details and hit send — no form submission needed.
-            </p>
-            <a href="#header" class="back-to-top">↑ Return to Index</a>
-        </div>
-    </section>
-
+        </section>
+    </main>
     <footer class="cta-footer">
         <div class="container">
             <h2>Have a question first?</h2>
@@ -1409,8 +1487,8 @@
                  href with your number (country code + digits, no + or spaces,
                  e.g. 919876543210). Also remove the "Coming soon" <span>.
                  ═══════════════════════════════════════════════════════════════ -->
-                <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank" rel="noopener noreferrer" class="whatsapp-disabled"
-                    aria-disabled="true"
+                <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank" rel="noopener noreferrer"
+                    class="whatsapp-disabled" aria-disabled="true"
                     style="display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:14px 28px;border-radius:2px;text-decoration:none;font-weight:600;font-size:0.9rem;position:relative;">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                         <path
@@ -1426,7 +1504,7 @@
                  EMAIL: replace YOUR_EMAIL@DOMAIN.COM with your actual address.
                  ═══════════════════════════════════════════════════════════════ -->
                 <a href="mailto:anandita.senneogi@gmail.com?subject=Quick%20Question%20About%20Your%20Art"
-                    style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.1);color:#fff;border:1px solid rgba(255,255,255,0.2);padding:14px 28px;border-radius:2px;text-decoration:none;font-weight:600;font-size:0.9rem;">
+                    style="display:inline-flex;align-items:center;gap:8px;background:#fff;color:#1a1a1a;border:1px solid rgba(255,255,255,0.2);padding:14px 28px;border-radius:2px;text-decoration:none;font-weight:600;font-size:0.9rem;">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
                         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
