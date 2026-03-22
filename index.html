@@ -226,7 +226,7 @@
             color: var(--primary);
         }
 
-        .compare-image-placeholder {
+        /* .compare-image-placeholder {
             width: 100%;
             aspect-ratio: 4/3;
             background: #f5f0e8;
@@ -240,21 +240,40 @@
             position: relative;
             overflow: hidden;
             margin-bottom: 20px;
+        } */
+
+        .compare-image-placeholder {
+            width: 100%;
+            aspect-ratio: 1/1;
+            /* 4 / 3 or 16/9 or 1/1 — pick your preferred shape */
+            overflow: hidden;
+            border-radius: 8px;
+            /* optional */
         }
 
-        .compare-image-placeholder::after {
+        /* .compare-image-placeholder::after {
             content: '';
             position: absolute;
             inset: 0;
             background: repeating-linear-gradient(-45deg, transparent, transparent 8px, rgba(0, 0, 0, 0.03) 8px, rgba(0, 0, 0, 0.03) 9px);
-        }
+        } */
 
-        .compare-image-placeholder img {
+        /* .compare-image-placeholder img {
             position: absolute;
             inset: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
+        } */
+
+        .compare-image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            /* This is the secret sauce   cover or contain */
+            object-position: center;
+            /* Ensures the focus is on the middle of the art */
+            display: block;
         }
 
         /* Size legend */
@@ -313,6 +332,7 @@
             display: flex;
         }
 
+        /* 
         .framing-image-placeholder {
             width: 100%;
             aspect-ratio: 4/3;
@@ -328,25 +348,44 @@
             gap: 10px;
             position: relative;
             overflow: hidden;
+        } */
+
+        .framing-image-placeholder {
+            width: 100%;
+            aspect-ratio: 1/1;
+            overflow: hidden;
+            border-radius: 8px;
+            /* optional */
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .framing-image-placeholder::after {
+        /* .framing-image-placeholder::after {
             content: '';
             position: absolute;
             inset: 0;
             background: repeating-linear-gradient(-45deg, transparent, transparent 8px, rgba(0, 0, 0, 0.03) 8px, rgba(0, 0, 0, 0.03) 9px);
-        }
+        } */
 
         .framing-image-placeholder svg {
             opacity: 0.35;
         }
 
-        .framing-image-placeholder img {
+        /* .framing-image-placeholder img {
             position: absolute;
             inset: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
+        } */
+
+        .framing-image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            display: block;
         }
 
         .framing-body {
@@ -764,14 +803,7 @@
                     <!-- Option 1: Rolled Canvas (Preferred) -->
                     <div class="framing-card preferred">
                         <div class="framing-image-placeholder">
-                            <!-- Replace the SVG below with <img src="your-image.jpg" alt="Rolled Canvas"> when ready -->
-                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <rect x="4" y="8" width="32" height="24" rx="2" stroke="#b08d57" stroke-width="1.5" />
-                                <path d="M12 20h16M16 15l-4 5 4 5" stroke="#b08d57" stroke-width="1.5"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                            Image coming soon
+                            <img src="rolled canvas v2.jpg" alt="Rolled Canvas" loading="lazy">
                         </div>
                         <div class="framing-body">
                             <div class="framing-badge">★ Preferred</div>
@@ -813,15 +845,7 @@
                     <!-- Option 3: Framed Canvas -->
                     <div class="framing-card">
                         <div class="framing-image-placeholder">
-                            <!-- Replace the SVG below with <img src="your-image.jpg" alt="Framed Canvas"> when ready -->
-                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <rect x="2" y="2" width="36" height="36" rx="2" stroke="#999" stroke-width="1.5" />
-                                <rect x="7" y="7" width="26" height="26" rx="1" stroke="#999" stroke-width="1" />
-                                <rect x="12" y="12" width="16" height="16" rx="1" stroke="#999" stroke-width="1"
-                                    stroke-dasharray="2 2" />
-                            </svg>
-                            Image coming soon
+                            <img src="framed canvas v2.jpg" alt="Framed Canvas" loading="lazy">
                         </div>
                         <div class="framing-body">
                             <h3>Framed Canvas (edge to edge)</h3>
@@ -860,8 +884,7 @@
                 <div class="compare-grid">
                     <div class="compare-col">
                         <div class="compare-image-placeholder">
-                            <!-- Replace with: <img src="print-closeup.jpg" alt="Canvas Print texture close-up"> -->
-                            Image coming soon
+                            <img src="canvas print original v2.jpg" alt="Canvas Print texture close-up" loading="lazy">
                         </div>
                         <h3>🖼️ Canvas Print (Precision & Consistency)</h3>
                         <p>A high-fidelity digital reproduction of the original artwork, printed on premium
@@ -878,8 +901,7 @@
                     </div>
                     <div class="compare-col">
                         <div class="compare-image-placeholder">
-                            <!-- Replace with: <img src="handpainted-closeup.jpg" alt="Hand Painted texture close-up"> -->
-                            Image coming soon
+                            <img src="hand paint original v2.jpg" alt="Hand Print texture close-up" loading="lazy">
                         </div>
                         <h3>🎨 Hand Painted (Texture & Authenticity)</h3>
                         <p>A true original — each piece is recreated entirely by hand on artist-grade canvas. No two
